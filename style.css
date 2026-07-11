@@ -22,8 +22,9 @@ margin-bottom: 60px;
   margin: 0 auto;
   width: 1110px;
   gap: 48px 45px;
-  display: grid;
-  grid-template-columns: repeat(3,340px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 
@@ -85,4 +86,23 @@ margin-bottom: 60px;
 
 .price span {
   font-weight: 400;
+}
+
+.buy-button {
+    display: block;
+    width: 180px;
+    margin: 20px auto 0;
+    padding: 12px 24px;
+    background-color: #515076;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #3f3d63;
 }
