@@ -1,18 +1,14 @@
 .products {
-    width: 1110px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding: 0;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 45px;
-
-    list-style-type: none;
+    list-style: none;
 }
 
 .products__item {
     width: 340px;
 }
-
-
