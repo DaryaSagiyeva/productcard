@@ -1,0 +1,135 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 573px;
+    padding: 28px;
+    background-color: #f7f7f7;
+    text-align: left;
+}
+
+.card__image {
+    display: block;
+    width: 284px;
+    height: 245px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.card--featured {
+    padding: 32px;
+    background-color: #e1e0e6;
+    box-shadow: 0 20px 43px rgba(77, 34, 179, 0.3);
+}
+
+.card__rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 12px;
+    font-size: 20px;
+    color: #f4c542;
+}
+
+.card__rating-value {
+    margin-left: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #01010e;
+}
+
+.card__star--half {
+    position: relative;
+    color: #d3d3d3;
+}
+
+.card__star--half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #f4c542;
+}
+
+.card__button {
+    display: block;
+    width: 180px;
+    margin: 20px auto 0;
+    padding: 12px 24px;
+    font-family: inherit;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #795ea3;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card__button:hover {
+    background-color: #3f3d63;
+}
+
+.card__image-wrapper {
+    position: relative;
+}
+
+.card__badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 6px 12px;
+    background-color: #29831e;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card__category {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #515076;
+    text-transform: uppercase;
+    opacity: 0.4;
+}
+
+.card__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.card:hover {
+    background-color: #ebeaf1;
+}
+
+.card__title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.card__description {
+    margin: 0 0 16px;
+}
+
+
+.compound__list {
+    margin: 6px 0 22px;
+    padding-left: 18px;
+}
+
+.card__price-label {
+    font-weight: 700;
+}
+
+.card__price-value {
+    font-weight: 400;
+}
