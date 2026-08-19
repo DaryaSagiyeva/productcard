@@ -22,7 +22,7 @@ const product = "Хлеб";
 const price = 100;
 
 function buyProduct(budget) {
-  if (budget > price) {
+  if (budget >= price) {
     console.log("Хлеб приобретен. Спасибо за покупаку!");
   } else {
     const x = price - budget;
@@ -31,7 +31,7 @@ function buyProduct(budget) {
   }
 }
 
-buyProduct(70);
+buyProduct(100);
 
 function personParameters() {}
 
