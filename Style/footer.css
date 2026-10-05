@@ -1,0 +1,161 @@
+.footer {
+  background-color: #333333;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0 100px;
+  color: #ffffff;
+}
+
+.footer__link,
+.footer__social-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__form {
+  display: flex;
+}
+
+.footer__input {
+  width: 250px;
+  padding: 12px;
+  border: none;
+}
+
+.footer__button {
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 15px;
+}
+
+.footer__title {
+  margin: 0 0 15px;
+}
+
+.footer__description {
+  margin: 0 0 20px;
+}
+
+.footer__subscribe-title {
+  margin: 0 0 15px;
+}
+
+.footer__button {
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 6px 6px 0;
+  border-left: 1px solid #cccccc;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.footer__line {
+  width: 50px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.footer__copyright {
+  margin: 10px 0 0;
+  color: #ffffff;
+}
+
+.footer__input {
+  width: 250px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+}
+
+.overlay {
+  display: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.modal-showed {
+  display: block;
+}
+
+.modal__content {
+  width: 400px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.registration-button {
+  display: block;
+  padding: 15px 30px;
+  margin: 20px auto;
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(88, 9, 235);
+  cursor: pointer;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.overlay-showed {
+  display: block;
+}
+
+.modal__content {
+  position: relative;
+  width: 400px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 24px;
+}
