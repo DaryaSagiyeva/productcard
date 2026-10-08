@@ -1,11 +1,11 @@
 const form = document.querySelector(".footer__form");
 
+const emailInput = document.querySelector(".footer__input");
 console.log(form);
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const emailInput = document.querySelector(".footer__input");
   const email = emailInput.value;
 
   const data = {
@@ -19,20 +19,29 @@ const modal = document.querySelector(".modal");
 
 const overlay = document.querySelector(".overlay");
 
-registrationButton.addEventListener("click", function () {
+function openModal() {
   modal.classList.add("modal-showed");
   overlay.classList.add("overlay-showed");
-});
+}
+
+registrationButton.addEventListener("click", openModal);
 
 const closeButton = document.querySelector(".modal__close");
 
-closeButton.addEventListener("click", function () {
+function closeModal() {
   modal.classList.remove("modal-showed");
   overlay.classList.remove("overlay-showed");
-});
+}
+
+closeButton.addEventListener("click", closeModal);
 
 const registrationForm = document.querySelector(".registration-form");
-
+const passwordInput = document.querySelector("#password");
+const repeatPasswordInput = document.querySelector("#repeat-password");
+const firstNameInput = document.querySelector("#first-name");
+const lastNameInput = document.querySelector("#last-name");
+const birthDateInput = document.querySelector("#birth-date");
+const loginInput = document.querySelector("#login");
 let user;
 
 registrationForm.addEventListener("submit", function (event) {
@@ -42,18 +51,11 @@ registrationForm.addEventListener("submit", function (event) {
     alert("Регистрация отклонена: проверьте правильность заполнения полей");
     return;
   }
-  const passwordInput = document.querySelector("#password");
-  const repeatPasswordInput = document.querySelector("#repeat-password");
 
   if (passwordInput.value !== repeatPasswordInput.value) {
     alert("Регистрация отклонена: пароли не совпадают");
     return;
   }
-
-  const firstNameInput = document.querySelector("#first-name");
-  const lastNameInput = document.querySelector("#last-name");
-  const birthDateInput = document.querySelector("#birth-date");
-  const loginInput = document.querySelector("#login");
 
   const userData = {
     firstName: firstNameInput.value,
@@ -65,8 +67,11 @@ registrationForm.addEventListener("submit", function (event) {
   };
 
   user = userData;
-  console.log(user);
 
-  modal.classList.remove("modal-showed");
-  overlay.classList.remove("overlay-showed");
+  const userForConsole = { ...user };
+  delete userForConsole.password;
+
+  console.log(userForConsole);
+
+  closeModal();
 });
