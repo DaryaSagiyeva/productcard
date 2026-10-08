@@ -89,7 +89,7 @@ function renderCards(productCards) {
 function getCardsCount() {
   const count = Number(prompt("Сколько карточек отобразить? От 1 до 5"));
 
-  if (count >= 1 && count <= 5) {
+  if (count >= 1 && count <= 5 && Number.isInteger(count)) {
     return count;
   }
 
@@ -112,4 +112,8 @@ const productDescriptions = productCards.reduce(function (acc, product) {
   return acc;
 }, []);
 
-console.log(productDescriptions);
+const mainTitle1 = document.getElementById("main-title");
+console.log(mainTitle1);
+
+const mainTitle2 = document.querySelector("#main-title");
+console.log(mainTitle2);
