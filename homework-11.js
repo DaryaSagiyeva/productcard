@@ -1,3 +1,6 @@
+import Modal from "./Modal.js";
+import Form from "./Form.js";
+
 const form = document.querySelector(".footer__form");
 
 const emailInput = document.querySelector(".footer__input");
@@ -15,27 +18,22 @@ form.addEventListener("submit", function (event) {
 });
 
 const registrationButton = document.querySelector(".registration-button");
-const modal = document.querySelector(".modal");
+const registrationModal = new Modal("registration-modal");
 
 const overlay = document.querySelector(".overlay");
 
 function openModal() {
-  modal.classList.add("modal-showed");
-  overlay.classList.add("overlay-showed");
+  registrationModal.open();
 }
 
 registrationButton.addEventListener("click", openModal);
 
-const closeButton = document.querySelector(".modal__close");
-
 function closeModal() {
-  modal.classList.remove("modal-showed");
-  overlay.classList.remove("overlay-showed");
+  registrationModal.close();
 }
 
-closeButton.addEventListener("click", closeModal);
-
 const registrationForm = document.querySelector(".registration-form");
+const registrationFormManager = new Form("registration-form");
 const passwordInput = document.querySelector("#password");
 const repeatPasswordInput = document.querySelector("#repeat-password");
 const firstNameInput = document.querySelector("#first-name");
@@ -46,7 +44,7 @@ let user;
 
 registrationForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const isValid = registrationForm.checkValidity();
+  const isValid = registrationFormManager.validate();
   if (!isValid) {
     alert("Регистрация отклонена: проверьте правильность заполнения полей");
     return;
@@ -57,14 +55,9 @@ registrationForm.addEventListener("submit", function (event) {
     return;
   }
 
-  const userData = {
-    firstName: firstNameInput.value,
-    lastName: lastNameInput.value,
-    birthDate: birthDateInput.value,
-    login: loginInput.value,
-    password: passwordInput.value,
-    createdOn: new Date(),
-  };
+  const userData = registrationFormManager.getValues();
+  userData.createdOn = new Date();
+  delete userData.repeatPassword;
 
   user = userData;
 
@@ -72,6 +65,6 @@ registrationForm.addEventListener("submit", function (event) {
   delete userForConsole.password;
 
   console.log(userForConsole);
-
+  registrationFormManager.reset();
   closeModal();
 });
